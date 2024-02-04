@@ -1,10 +1,12 @@
 import './OrderCheckout.css';
+import Header from '../Header/Header';
 
 function OrderCheckout() {
   return (
     <>
+      <Header />
       <div>
-        <h2>Step 3: Checkout</h2>
+        <h2 className="header">Step 3: Checkout</h2>
       </div>
       <main>
         <h3 className="type">Type:</h3>
@@ -31,9 +33,11 @@ function OrderCheckout() {
           </table>
         </div>
         <div>
-          <h3 className="total">Total: </h3>
+          <h3 className="total">Total: $</h3>
         </div>
-        <button>Checkout</button>
+        <div className="checkout">
+          <button>Checkout</button>
+        </div>
       </main>
     </>
   );

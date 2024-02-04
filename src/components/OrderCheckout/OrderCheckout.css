@@ -24,10 +24,20 @@
 
 .type {
   text-align: right;
-  margin-right: 5%;
+  margin-right: 2.5%;
 }
 
 .total {
   text-align: right;
-  margin-right: 5%;
+  margin-right: 2.5%;
+}
+
+.header {
+  margin-left: 2.5%;
+  text-align: left;
+}
+
+.checkout {
+  text-align: right;
+  margin-right: 2.5%;
 }
