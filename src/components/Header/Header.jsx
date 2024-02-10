@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
@@ -8,8 +8,15 @@ function Header() {
           <h1 className="App-title">Prime Pizza</h1>
         </header>
         <ul>
-          <li><Link to='/'>Home</Link></li>
-          <li><Link to='/orderCheckout'>Cart</Link></li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/orderCheckout">Cart</Link>
+          </li>
+          <li>
+            <Link to="pizzaSelection">Order</Link>
+          </li>
         </ul>
       </div>
     </>
