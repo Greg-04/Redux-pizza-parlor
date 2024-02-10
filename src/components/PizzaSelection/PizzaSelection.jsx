@@ -1,8 +1,12 @@
 // imports:
 import Header from '../Header/Header';
+// import { useSelector } from 'react-redux';
+// import PizzaItem from '../PizzaItem/PizzaItem';
 
 // functions:
 function PizzaSelection() {
+  // const pizzaList = useSelector((store) => store.pizzaList);
+
   // pizzaRefreshList
   return (
     <div>
@@ -12,6 +16,15 @@ function PizzaSelection() {
       {/* TODO: Display pizza menu options */}
       {/* TODO: .map (loop through data) */}
       {/* TODO: Add Next Button that navigates to CustomerInfo*/}
+      {/* <ul>
+        {pizzaList.map((pizza) => (
+          <PizzaItem
+            key={pizza.id}
+            pizza={pizza}
+            fetchPizzaList={fetchPizzaList}
+          />
+        ))}
+      </ul> */}
       <button>Next</button>
     </div>
   );

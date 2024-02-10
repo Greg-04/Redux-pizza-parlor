@@ -5,6 +5,8 @@ import {
   HashRouter as Router,
   Route,
 } from 'react-router-dom/cjs/react-router-dom';
+// import { useEffect } from 'react';
+// import { useDispatch } from 'react-redux';
 // Component imports
 import PizzaSelection from '../PizzaSelection/PizzaSelection';
 import CustomerInfo from './CustomerInfo/CustomerInfo';
@@ -12,6 +14,24 @@ import OrderCheckout from '../OrderCheckout/OrderCheckout';
 import Home from '../Home/Home';
 
 function App() {
+  // const fetchPizzaList = () => {
+  //   const dispatch = useDispatch();
+
+  //   axios
+  //     .get('/api/pizza')
+  //     .then((response) => {
+  //       // send data to data to redux
+  //       dispatch({ type: 'SET_PIZZA_LIST', payload: response.data });
+  //     })
+  //     .catch((error) => {
+  //       console.log('ERROR:', error);
+  //     });
+  // };
+
+  // useEffect(() => {
+  //   fetchPizzaList();
+  // }, []);
+
   return (
     <>
       <div className="App">
@@ -20,12 +40,12 @@ function App() {
             <Home />
           </Route>
           <Route path="/pizzaSelection">
-            <PizzaSelection/>
+            <PizzaSelection />
           </Route>
           <Route path="/orderCheckout" exact>
             <OrderCheckout />
           </Route>
-         <Route path="/customerInfo" exact>
+          <Route path="/customerInfo" exact>
             <CustomerInfo />
           </Route>
         </Router>

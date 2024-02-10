@@ -15,7 +15,10 @@ function Header() {
             <Link to="/orderCheckout">Cart</Link>
           </li>
           <li>
-            <Link to="pizzaSelection">Order</Link>
+            <Link to="/pizzaSelection">Order</Link>
+          </li>
+          <li>
+            <Link to="/customerInfo">Customer Information</Link>
           </li>
         </ul>
       </div>

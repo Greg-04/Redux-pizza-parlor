@@ -8,6 +8,7 @@ function CustomerInfo() {
   const [inputStreetName, setInputStreetName] = useState('');
   const [inputCity, setInputCity] = useState('');
   const [inputZip, setInputZip] = useState('');
+  const [inputType, setInputType] = useState('');
   const dispatch = useDispatch();
 
   const handleClickNavToCheckout = (event) => {
@@ -19,6 +20,7 @@ function CustomerInfo() {
         street_address: inputStreetName,
         city: inputCity,
         zip: inputZip,
+        type: inputType,
       },
     });
 
@@ -27,18 +29,21 @@ function CustomerInfo() {
     setInputStreetName('');
     setInputCity('');
     setInputZip('');
+    setInputType('');
   };
 
   return (
+    <>
     <form onSubmit={handleClickNavToCheckout}>
-      <input placeholder="Name" id="name" />
-      <input placeholder="Street Address" id="streetName" />
-      <input placeholder="City" id="city" />
-      <input placeholder="Zip" id="zip" />
-      <input type="checkbox">Pickup</input>
-      <input type="checkbox">Delivery</input>
+      <input type="text" placeholder="Name" id="name" />
+      <input type="text" placeholder="Street Address" id="streetName" />
+      <input type="text" placeholder="City" id="city" />
+      <input type="text" placeholder="Zip" id="zip" />
+      <input type="checkbox"/>Pickup
+      <input type="checkbox"/>Delivery
       <Button type="submit">Next</Button>
     </form>
-)}
+    </>
+)};
 
 export default CustomerInfo;
