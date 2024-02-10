@@ -6,13 +6,21 @@ import {
   Route,
 } from 'react-router-dom/cjs/react-router-dom';
 import CustomerInfo from './CustomerInfo/CustomerInfo';
+import OrderCheckout from '../OrderCheckout/OrderCheckout';
+import Home from '../Home/Home';
 
 function App() {
   return (
     <>
-      <div>
+      <div className="App">
         <Router>
-          <Route path="/customerInfo" exact>
+          <Route path="/" exact>
+            <Home />
+          </Route>
+          <Route path="/orderCheckout" exact>
+            <OrderCheckout />
+          </Route>
+         <Route path="/customerInfo" exact>
             <CustomerInfo />
           </Route>
         </Router>

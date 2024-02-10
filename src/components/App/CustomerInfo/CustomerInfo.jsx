@@ -1,3 +1,4 @@
+
 import { Button } from '@mui/material';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -38,7 +39,6 @@ function CustomerInfo() {
       <input type="checkbox">Delivery</input>
       <Button type="submit">Next</Button>
     </form>
-  );
-}
+)}}
 
 export default CustomerInfo;
