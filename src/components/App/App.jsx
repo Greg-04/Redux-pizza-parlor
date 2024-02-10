@@ -1,8 +1,12 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
+import {
+  HashRouter as Router,
+  Route,
+} from 'react-router-dom/cjs/react-router-dom';
+import CustomerInfo from './CustomerInfo/CustomerInfo';
 import OrderCheckout from '../OrderCheckout/OrderCheckout';
-import { HashRouter as Router, Route } from 'react-router-dom';
 import Home from '../Home/Home';
 
 function App() {
@@ -15,6 +19,9 @@ function App() {
           </Route>
           <Route path="/orderCheckout" exact>
             <OrderCheckout />
+          </Route>
+         <Route path="/customerInfo" exact>
+            <CustomerInfo />
           </Route>
         </Router>
       </div>
