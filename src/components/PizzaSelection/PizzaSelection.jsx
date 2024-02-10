@@ -1,15 +1,16 @@
-// This is where clients can look at the menu and select the items they would like to purchase
+// Displays Pizza List
 
 // imports:
-import react from 'react';
-
 
 // functions:
 function PizzaSelection() {
   // pizzaRefreshList
-  return(
+  return (
+    <h1>Step 1: Select your pizza.</h1>
     // TODO: Display pizza menu options
-    // TODO: .map (loop through data) 
-    // TODO: 
+    // TODO: .map (loop through data)
+    // TODO:
   );
 }
+
+export default PizzaSelection;
