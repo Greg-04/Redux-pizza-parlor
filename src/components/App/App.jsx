@@ -4,6 +4,7 @@ import './App.css';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 // Component imports
+import Home from '../Home/Home';
 import PizzaSelection from '../PizzaSelection/PizzaSelection';
 
 function App() {
@@ -15,20 +16,25 @@ function App() {
         {/* TODO: put navigation here */}
         <Router>
           <div id="navigationDiv">
-            <ul id="nav">
+            <ul>
+              <li>
+                <Link to="/">HOME</Link>
+              </li>
               <li>
                 <Link to="/PizzaSelection">Pizza Selection</Link>
               </li>
             </ul>
           </div>
-          <Route path="/PizzaSelection" exact>
+
+          {/* Routes */}
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/PizzaSelection">
             <PizzaSelection />
           </Route>
         </Router>
       </header>
-
-      <img src="images/pizza_photo.png" />
-      <p>Pizza is great.</p>
     </div>
   );
 }

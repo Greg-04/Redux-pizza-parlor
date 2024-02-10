@@ -6,10 +6,12 @@
 function PizzaSelection() {
   // pizzaRefreshList
   return (
-    <h1>Step 1: Select your pizza.</h1>
-    // TODO: Display pizza menu options
-    // TODO: .map (loop through data)
-    // TODO:
+    <div>
+      <h1>Step 1: Select your pizza.</h1>
+      <p> TEST TEST </p>
+      // TODO: Display pizza menu options //TODO: .map (loop through data)
+      //TODO:
+    </div>
   );
 }
 
