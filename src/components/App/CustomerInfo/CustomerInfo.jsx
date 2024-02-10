@@ -39,6 +39,6 @@ function CustomerInfo() {
       <input type="checkbox">Delivery</input>
       <Button type="submit">Next</Button>
     </form>
-)}}
+)}
 
 export default CustomerInfo;
