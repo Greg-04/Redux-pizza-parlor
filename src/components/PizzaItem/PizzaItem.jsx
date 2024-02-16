@@ -1,13 +1,18 @@
 // Pizza Item (the nitty gritty of each pizza item)
-// import axios from 'axios';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 
-// function ({  }) {
+function PizzaItem({ fetchPizzaList, pizza }) {
+  console.log('in PizzaItem()');
+  console.log('pizza Name: ', pizza);
+  return (
+    <Grid item xs={8}>
+      <img src={pizza.image_path} />
+      <h1>{pizza.name}</h1>
+      <p>{pizza.description}</p>
+      <button type="button">Add</button>
+    </Grid>
+  );
+}
 
-
-//   return (
-//    <>
-//    </>
-//   );
-// }
-
-// export default ;
+export default PizzaItem;

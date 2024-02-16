@@ -1,12 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-import {
-  HashRouter as Router,
-  Route,
-} from 'react-router-dom/cjs/react-router-dom';
-// import { useEffect } from 'react';
-// import { useDispatch } from 'react-redux';
+import { HashRouter as Router, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 // Component imports
 import PizzaSelection from '../PizzaSelection/PizzaSelection';
 import CustomerInfo from './CustomerInfo/CustomerInfo';
@@ -14,23 +11,23 @@ import OrderCheckout from '../OrderCheckout/OrderCheckout';
 import Home from '../Home/Home';
 
 function App() {
-  // const fetchPizzaList = () => {
-  //   const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  //   axios
-  //     .get('/api/pizza')
-  //     .then((response) => {
-  //       // send data to data to redux
-  //       dispatch({ type: 'SET_PIZZA_LIST', payload: response.data });
-  //     })
-  //     .catch((error) => {
-  //       console.log('ERROR:', error);
-  //     });
-  // };
+  const fetchPizzaList = () => {
+    axios
+      .get('/api/pizza')
+      .then((response) => {
+        // send data to data to redux
+        dispatch({ type: 'SET_PIZZA_LIST', payload: response.data });
+      })
+      .catch((error) => {
+        console.log('ERROR:', error);
+      });
+  };
 
-  // useEffect(() => {
-  //   fetchPizzaList();
-  // }, []);
+  useEffect(() => {
+    fetchPizzaList();
+  }, []);
 
   return (
     <>
@@ -40,7 +37,7 @@ function App() {
             <Home />
           </Route>
           <Route path="/pizzaSelection">
-            <PizzaSelection />
+            <PizzaSelection fetchPizzaList={fetchPizzaList} />
           </Route>
           <Route path="/orderCheckout" exact>
             <OrderCheckout />
