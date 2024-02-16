@@ -5,6 +5,8 @@ import PizzaItem from '../PizzaItem/PizzaItem';
 
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import Container from '@mui/material/Container';
 
 // functions:
 function PizzaSelection({ fetchPizzaList }) {
@@ -18,19 +20,23 @@ function PizzaSelection({ fetchPizzaList }) {
       {/* TODO: Display pizza menu options */}
       {/* TODO: .map (loop through data) */}
       {/* TODO: Add Next Button that navigates to CustomerInfo*/}
-      <ul>
+      <Container>
         <Box className="container">
-          <Grid container spacing={2} columns={2}>
+          <Grid container>
             {pizzaList.map((pizza) => (
-              <PizzaItem
-                key={pizza.id}
-                pizza={pizza}
-                fetchPizzaList={fetchPizzaList}
-              />
+              <Grid item xs={12} md={4} lg={4}>
+                <Paper>
+                  <PizzaItem
+                    key={pizza.id}
+                    pizza={pizza}
+                    fetchPizzaList={fetchPizzaList}
+                  />
+                </Paper>
+              </Grid>
             ))}
           </Grid>
         </Box>
-      </ul>
+      </Container>
       <button>Next</button>
     </div>
   );

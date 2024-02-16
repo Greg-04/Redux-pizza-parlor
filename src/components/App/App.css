@@ -13,3 +13,8 @@
 .App-title {
   font-size: 2em;
 }
+
+.pizzaImage,
+.pizzaDescription {
+  max-width: 350px;
+}
