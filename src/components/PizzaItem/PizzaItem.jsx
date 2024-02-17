@@ -12,8 +12,8 @@ function PizzaItem({ fetchPizzaList, pizza }) {
 
   // we want to add button to be shown as default:
   const [addButtonShown, setAddButtonShown] = useState(true);
-  let pizzaName = pizza.name;
-  console.log('pizza test: ', pizzaName);
+  // let pizzaName = pizza.name;
+  // console.log('pizza test: ', pizzaName);
 
   // TODO: function to add pizza to cart && Toggle Remove button
   const handleAddButton = () => {
@@ -55,8 +55,7 @@ function PizzaItem({ fetchPizzaList, pizza }) {
         <button
           type="button"
           className="removeButton"
-          onClick={handleRemoveButton}
-        >
+          onClick={handleRemoveButton}>
           Remove
         </button>
       )}
