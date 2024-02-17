@@ -14,6 +14,38 @@
   font-size: 2em;
 }
 
-.blackFont {
-  color: black;
+.pizzaImage {
+  width: 280px;
+}
+
+.pizzaDescription {
+  width: 280px;
+  padding-bottom: 20px;
+}
+
+.addButton,
+.removeButton {
+  width: 250px;
+  margin-top: 10px;
+}
+
+.pizzaSelectionNextButton {
+  width: 200px;
+  margin-bottom: 40px;
+}
+
+/* everything before the next button for PizzaSelection: */
+.pizzaContainer {
+  margin-bottom: 20px;
+}
+
+/* PizzaItem: */
+.gridContainer {
+  text-align: center;
+  height: 480px;
+  background-color: aliceblue;
+}
+
+.pizzaPrice {
+  font-weight: bold;
 }
