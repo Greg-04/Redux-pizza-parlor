@@ -14,7 +14,30 @@
   font-size: 2em;
 }
 
-.pizzaImage,
+.pizzaImage {
+  width: 280px;
+}
+
 .pizzaDescription {
-  max-width: 350px;
+  width: 280px;
+  height: 130px;
+}
+
+.addButton {
+  width: 250px;
+}
+
+.pizzaSelectionNextButton {
+  width: 200px;
+  margin-bottom: 40px;
+}
+
+/* everything before the next button for PizzaSelection: */
+.pizzaContainer {
+  margin-bottom: 20px;
+}
+
+/* PizzaItem: */
+.gridContainer {
+  text-align: center;
 }

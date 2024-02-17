@@ -6,11 +6,13 @@ function PizzaItem({ fetchPizzaList, pizza }) {
   console.log('in PizzaItem()');
   console.log('pizza Name: ', pizza);
   return (
-    <Grid item xs={8}>
+    <Grid item className="gridContainer">
       <img src={pizza.image_path} className="pizzaImage" />
-      <h1>{pizza.name}</h1>
+      <h1 className="pizzaTitle">{pizza.name}</h1>
       <p className="pizzaDescription">{pizza.description}</p>
-      <button type="button">Add</button>
+      <button type="button" className="addButton">
+        Add
+      </button>
     </Grid>
   );
 }

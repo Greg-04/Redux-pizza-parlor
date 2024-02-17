@@ -20,11 +20,17 @@ function PizzaSelection({ fetchPizzaList }) {
       {/* TODO: Display pizza menu options */}
       {/* TODO: .map (loop through data) */}
       {/* TODO: Add Next Button that navigates to CustomerInfo*/}
-      <Container>
-        <Box className="container">
-          <Grid container>
+      <Container className="container">
+        <Box>
+          <Grid
+            container
+            className="pizzaContainer"
+            alignItems="center"
+            justifyContent="center"
+            gap={2}
+          >
             {pizzaList.map((pizza) => (
-              <Grid item xs={12} md={4} lg={4}>
+              <Grid item xs={12} md={3} lg={3}>
                 <Paper>
                   <PizzaItem
                     key={pizza.id}
@@ -37,7 +43,7 @@ function PizzaSelection({ fetchPizzaList }) {
           </Grid>
         </Box>
       </Container>
-      <button>Next</button>
+      <button className="pizzaSelectionNextButton">Next</button>
     </div>
   );
 }
