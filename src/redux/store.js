@@ -17,7 +17,7 @@ const orderList = (state = [], action) => {
   return state;
 };
 
-const addPizzaToCart = (state = '', action) => {
+const addPizzaToCart = (state = [], action) => {
   if (action.type === 'ADD_ITEM_TO_CART') {
     return [...state, action.payload];
   } // end of ADD_ITEM_TO_CART
