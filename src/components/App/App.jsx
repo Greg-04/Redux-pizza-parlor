@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 // Component imports
 import PizzaSelection from '../PizzaSelection/PizzaSelection';
-import CustomerInfo from './CustomerInfo/CustomerInfo';
+import CustomerInfo from '../CustomerInfo/CustomerInfo';
 import OrderCheckout from '../OrderCheckout/OrderCheckout';
 import Home from '../Home/Home';
 
