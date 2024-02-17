@@ -1,12 +1,14 @@
 import './OrderCheckout.css';
 import Header from '../Header/Header';
 import { useSelector } from 'react-redux';
+import axios from 'axios';
 
 function OrderCheckout() {
   //setting up order global state
   let pizzaCart = useSelector((store) => store.addPizzaToCart);
   let price = Number(pizzaCart.price);
   let name = pizzaCart.name;
+  // console.log('pizza cart', pizzaCart);
 
   //setting up customer global state
   let customerInfo = useSelector((state) => state.customerInfo);
@@ -16,6 +18,49 @@ function OrderCheckout() {
   let zipName = customerInfo.zip;
   let inputType = customerInfo.type;
 
+  //pushing pizza into array
+  let pizzaArray = [];
+  pizzaArray.push(name);
+  console.log(pizzaArray);
+
+  //making sample pizza object
+  let pizzaObject = [
+    {
+      id: pizzaArray.length,
+      quantity: pizzaArray.length,
+    },
+  ];
+  console.log(pizzaObject);
+
+  const handleSubmit = () => {
+    console.log('in handleSubmit');
+    console.log(
+      customerName,
+      streetAddress,
+      cityName,
+      zipName,
+      inputType,
+      price,
+      pizzaArray
+    );
+    axios
+      .post('/api/order', {
+        customer_name: customerName,
+        street_address: streetAddress,
+        city: cityName,
+        zip: zipName,
+        type: inputType,
+        total: price,
+        pizzas: pizzaObject,
+      })
+      .then((response) => {
+        // Success!
+        alert('Item Added!');
+      })
+      .catch((error) => {
+        console.error('ERROR:', error);
+      });
+  };
   return (
     <>
       <Header />
@@ -47,10 +92,10 @@ function OrderCheckout() {
           </table>
         </div>
         <div>
-          <h3 className="total">Total: $</h3>
+          <h3 className="total">Total: $ {price}</h3>
         </div>
         <div className="checkout">
-          <button>Checkout</button>
+          <button onClick={handleSubmit}>Checkout</button>
         </div>
       </main>
     </>
