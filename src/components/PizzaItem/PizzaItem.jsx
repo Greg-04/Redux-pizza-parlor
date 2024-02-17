@@ -12,13 +12,19 @@ function PizzaItem({ fetchPizzaList, pizza }) {
 
   // we want to add button to be shown as default:
   const [addButtonShown, setAddButtonShown] = useState(true);
+  let pizzaName = pizza.name;
 
   // TODO: function to add pizza to cart && Toggle Remove button
   const handleAddButton = () => {
     console.log('in handleAddButton');
     console.log('ADD Pizza: ', pizza.id);
     // ADD Pizza to cart -- add to Redux Store
-    // dispatch();
+    // dispatch({
+    //   type: 'ADD_PIZZA_TO_CART',
+    //   payload:
+    //     name: pizzaName,
+
+    // });
     // make the remove button appear
     setAddButtonShown(!addButtonShown);
   };
@@ -37,6 +43,7 @@ function PizzaItem({ fetchPizzaList, pizza }) {
       <img src={pizza.image_path} className="pizzaImage" />
       <h1 className="pizzaTitle">{pizza.name}</h1>
       <p className="pizzaDescription">{pizza.description}</p>
+      <p className="pizzaPrice">{pizza.price}</p>
       {/* TODO: Add button switches to remove item */}
       {addButtonShown ? (
         <button type="button" className="addButton" onClick={handleAddButton}>
