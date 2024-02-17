@@ -17,9 +17,6 @@ function PizzaSelection({ fetchPizzaList }) {
     <div>
       <Header />
       <h1 className="blackFont">Step 1: Select your pizza.</h1>
-      {/* TODO: Display pizza menu options */}
-      {/* TODO: .map (loop through data) */}
-      {/* TODO: Add Next Button that navigates to CustomerInfo*/}
       <Container className="container">
         <Box>
           <Grid
@@ -30,19 +27,16 @@ function PizzaSelection({ fetchPizzaList }) {
             gap={2}
           >
             {pizzaList.map((pizza) => (
-              <Grid item xs={12} md={3} lg={3}>
+              <Grid item xs={12} md={3} lg={3} key={pizza.id}>
                 <Paper>
-                  <PizzaItem
-                    key={pizza.id}
-                    pizza={pizza}
-                    fetchPizzaList={fetchPizzaList}
-                  />
+                  <PizzaItem pizza={pizza} fetchPizzaList={fetchPizzaList} />
                 </Paper>
               </Grid>
             ))}
           </Grid>
         </Box>
       </Container>
+      {/* This next button will go to the Customer Info */}
       <button className="pizzaSelectionNextButton">Next</button>
     </div>
   );
