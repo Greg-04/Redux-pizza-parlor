@@ -1,6 +1,8 @@
 import { Button } from '@mui/material';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import Header from '../Header/Header';
 
 function CustomerInfo() {
   const [inputName, setInputName] = useState('');
