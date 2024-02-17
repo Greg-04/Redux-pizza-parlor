@@ -11,7 +11,7 @@ function CustomerInfo() {
 
   const dispatch = useDispatch();
 
-  const handleClickNavToCheckout = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     dispatch({
       type: 'CUSTOMER_INFO_ADD',
