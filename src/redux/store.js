@@ -28,11 +28,19 @@ const addPizzaToCart = (state = [], action) => {
   return state;
 };
 
+const customerInfo = (state = [], action) => {
+  if (action.type === 'CUSTOMER_INFO_ADD') {
+    return action.payload;
+  }
+  return state;
+};
+
 const store = createStore(
   combineReducers({
     pizzaList,
     orderList, // 👈 Be sure to replace this, too!
     addPizzaToCart,
+    customerInfo,
   }),
   applyMiddleware(logger)
 );
