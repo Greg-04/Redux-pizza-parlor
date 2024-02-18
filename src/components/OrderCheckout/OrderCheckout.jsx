@@ -6,9 +6,19 @@ import axios from 'axios';
 function OrderCheckout() {
   //setting up order global state
   let pizzaCart = useSelector((store) => store.addPizzaToCart);
-  let price = Number(pizzaCart.price);
-  let name = pizzaCart.name;
-  // console.log('pizza cart', pizzaCart);
+  // let id = pizzaCart.map((pizza) => pizza.id);
+  // console.log('id:', id);
+  // let price = Number(pizzaCart.price);
+  // let name = pizzaCart.name;
+  console.log('pizza cart', pizzaCart);
+
+  //taking in all the prices to set up total
+  const prices = pizzaCart.map((pizza) => Number(pizza.price));
+  console.log('prices', prices);
+  let totalPrice = 0;
+  for (const price of prices) {
+    totalPrice += price;
+  }
 
   //setting up customer global state
   let customerInfo = useSelector((state) => state.customerInfo);
@@ -18,19 +28,24 @@ function OrderCheckout() {
   let zipName = customerInfo.zip;
   let inputType = customerInfo.type;
 
+  //working with updated addpizzatocartobject
+  let pizzaOrderNumber = pizzaCart.length;
+  console.log('Number of pizza orders', pizzaOrderNumber);
+
   //pushing pizza into array
-  let pizzaArray = [];
-  pizzaArray.push(name);
-  console.log(pizzaArray);
+  // let pizzaArray = [];
+  // pizzaArray.push(name);
+  // console.log(pizzaArray);
 
   //making sample pizza object
-  let pizzaObject = [
+  let pizzaObjectArray = [
     {
-      id: pizzaArray.length,
-      quantity: pizzaArray.length,
+      id: pizzaOrderNumber,
+      quantity: pizzaOrderNumber,
     },
   ];
-  console.log(pizzaObject);
+
+  console.log('pizzaObject', pizzaObjectArray);
 
   const handleSubmit = () => {
     console.log('in handleSubmit');
@@ -40,8 +55,8 @@ function OrderCheckout() {
       cityName,
       zipName,
       inputType,
-      price,
-      pizzaArray
+      totalPrice,
+      pizzaObjectArray
     );
     axios
       .post('/api/order', {
@@ -50,8 +65,8 @@ function OrderCheckout() {
         city: cityName,
         zip: zipName,
         type: inputType,
-        total: price,
-        pizzas: pizzaObject,
+        total: totalPrice,
+        pizzas: pizzaObjectArray,
       })
       .then((response) => {
         // Success!
@@ -84,15 +99,17 @@ function OrderCheckout() {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>{name}</td>
-                <td>{price}</td>
-              </tr>
+              {pizzaCart.map((pizza, index) => (
+                <tr key={index}>
+                  <td>{pizza.name}</td>
+                  <td>{pizza.price}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
         <div>
-          <h3 className="total">Total: $ {price}</h3>
+          <h3 className="total">Total: $ {totalPrice}</h3>
         </div>
         <div className="checkout">
           <button onClick={handleSubmit}>Checkout</button>

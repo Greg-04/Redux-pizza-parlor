@@ -14,7 +14,7 @@ function PizzaItem({ fetchPizzaList, pizza }) {
   const [addButtonShown, setAddButtonShown] = useState(true);
   // let pizzaName = pizza.name;
   // console.log('pizza test: ', pizzaName);
-
+  let id = 1;
   // TODO: function to add pizza to cart && Toggle Remove button
   const handleAddButton = () => {
     console.log('in handleAddButton');

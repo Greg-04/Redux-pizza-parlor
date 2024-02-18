@@ -24,8 +24,7 @@ function PizzaSelection({ fetchPizzaList }) {
             className="pizzaContainer"
             alignItems="center"
             justifyContent="center"
-            gap={2}
-          >
+            gap={2}>
             {pizzaList.map((pizza) => (
               <Grid item xs={12} md={3} lg={3} key={pizza.id}>
                 <Paper>

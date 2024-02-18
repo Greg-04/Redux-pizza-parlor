@@ -19,8 +19,8 @@ const orderList = (state = [], action) => {
 
 const addPizzaToCart = (state = [], action) => {
   if (action.type === 'ADD_ITEM_TO_CART') {
-    // return [...state, action.payload];
-    return action.payload;
+    return [...state, action.payload];
+    // return action.payload;
   } // end of ADD_ITEM_TO_CART
   if (action.type === 'REMOVE_ITEM_FROM_CART') {
     return [...state, action.payload];
