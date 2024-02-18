@@ -17,12 +17,14 @@ const orderList = (state = [], action) => {
   return state;
 };
 
-const addPizzaToCart = (state = [], action) => {
+const pizzaCart = (state = [], action) => {
   if (action.type === 'ADD_ITEM_TO_CART') {
     return [...state, action.payload];
   } // end of ADD_ITEM_TO_CART
   if (action.type === 'REMOVE_ITEM_FROM_CART') {
-    return [...state, action.payload];
+    return state.filter((pizzaItem) => {
+      return pizzaItem.id !== action.payload;
+    });
   } // end of REMOVE_ITEM_FROM_CART
   // always return state:
   return state;
@@ -32,7 +34,7 @@ const store = createStore(
   combineReducers({
     pizzaList,
     orderList, // 👈 Be sure to replace this, too!
-    addPizzaToCart,
+    pizzaCart,
   }),
   applyMiddleware(logger)
 );

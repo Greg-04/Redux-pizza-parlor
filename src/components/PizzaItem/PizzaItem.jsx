@@ -23,6 +23,7 @@ function PizzaItem({ fetchPizzaList, pizza }) {
     dispatch({
       type: 'ADD_ITEM_TO_CART',
       payload: {
+        id: pizza.id,
         name: pizza.name,
         price: pizza.price,
       },
@@ -36,7 +37,10 @@ function PizzaItem({ fetchPizzaList, pizza }) {
     console.log('in handleDeleteButton()');
     console.log('DELETE Pizza: ', pizza.id);
     // DELETE pizza from Cart -- remove from Redux Store
-
+    dispatch({
+      type: 'REMOVE_ITEM_FROM_CART',
+      payload: pizza.id,
+    });
     // make the remove button appear
     setAddButtonShown(!addButtonShown);
   };
