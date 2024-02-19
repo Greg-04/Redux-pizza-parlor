@@ -23,6 +23,7 @@ function PizzaItem({ fetchPizzaList, pizza }) {
     dispatch({
       type: 'ADD_ITEM_TO_CART',
       payload: {
+        id: pizza.id,
         name: pizza.name,
         price: pizza.price,
       },

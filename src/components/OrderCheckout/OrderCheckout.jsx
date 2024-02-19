@@ -7,8 +7,9 @@ import { useHistory } from 'react-router-dom';
 function OrderCheckout() {
   //setting up order global state
   let pizzaCart = useSelector((store) => store.addPizzaToCart);
-  // let id = pizzaCart.map((pizza) => pizza.id);
-  // console.log('id:', id);
+  let id = pizzaCart.map((pizzas) => pizzas.id);
+  console.log('id:', id[0]);
+  let pizzasId = id[0];
   // let price = Number(pizzaCart.price);
   // let name = pizzaCart.name;
   console.log('pizza cart', pizzaCart);
@@ -42,7 +43,7 @@ function OrderCheckout() {
   //making sample pizza object
   let pizzaObjectArray = [
     {
-      id: pizzaOrderNumber,
+      id: pizzasId,
       quantity: pizzaOrderNumber,
     },
   ];
@@ -52,19 +53,16 @@ function OrderCheckout() {
   const handleSubmit = () => {
     console.log('in handleSubmit');
     console.log(
-      'customername',
       customerName,
-      'streetaddress:',
+
       streetAddress,
-      'cityName',
+
       cityName,
-      'zip',
+
       zipName,
-      'input',
+
       inputType,
-      'total price',
       totalPrice,
-      'pizzaobjectarray',
       pizzaObjectArray
     );
     axios
