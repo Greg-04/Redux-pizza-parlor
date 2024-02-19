@@ -7,6 +7,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Container from '@mui/material/Container';
+import { Link } from 'react-router-dom';
 
 // functions:
 function PizzaSelection({ fetchPizzaList }) {
@@ -36,7 +37,9 @@ function PizzaSelection({ fetchPizzaList }) {
         </Box>
       </Container>
       {/* This next button will go to the Customer Info */}
-      <button className="pizzaSelectionNextButton">Next</button>
+      <button className="pizzaSelectionNextButton">
+        <Link to="/customerInfo">Next</Link>
+      </button>
     </div>
   );
 }

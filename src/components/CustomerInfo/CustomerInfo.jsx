@@ -1,7 +1,7 @@
 import { Button } from '@mui/material';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Header from '../Header/Header';
 
 function CustomerInfo() {
@@ -12,6 +12,7 @@ function CustomerInfo() {
   const [inputType, setInputType] = useState('');
 
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -25,13 +26,14 @@ function CustomerInfo() {
         type: inputType,
       },
     });
-
     //clear input fields
     setInputName('');
     setInputStreetName('');
     setInputCity('');
     setInputZip('');
     setInputType('');
+
+    history.push('/orderCheckout');
   };
 
   return (
@@ -92,9 +94,7 @@ function CustomerInfo() {
             onChange={(event) => setInputZip(event.target.value)}
           />
           <br></br>
-          <Button type="submit">
-            Next<Link to="/orderCheckout"></Link>
-          </Button>
+          <Button type="submit">Next</Button>
         </form>
       </div>
     </>

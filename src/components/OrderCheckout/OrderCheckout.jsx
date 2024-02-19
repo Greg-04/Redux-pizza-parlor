@@ -2,6 +2,7 @@ import './OrderCheckout.css';
 import Header from '../Header/Header';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 function OrderCheckout() {
   //setting up order global state
@@ -19,6 +20,7 @@ function OrderCheckout() {
   for (const price of prices) {
     totalPrice += price;
   }
+  const history = useHistory();
 
   //setting up customer global state
   let customerInfo = useSelector((state) => state.customerInfo);
@@ -50,12 +52,19 @@ function OrderCheckout() {
   const handleSubmit = () => {
     console.log('in handleSubmit');
     console.log(
+      'customername',
       customerName,
+      'streetaddress:',
       streetAddress,
+      'cityName',
       cityName,
+      'zip',
       zipName,
+      'input',
       inputType,
+      'total price',
       totalPrice,
+      'pizzaobjectarray',
       pizzaObjectArray
     );
     axios
@@ -70,7 +79,8 @@ function OrderCheckout() {
       })
       .then((response) => {
         // Success!
-        alert('Item Added!');
+        alert('Order Placed!');
+        history.push('/');
       })
       .catch((error) => {
         console.error('ERROR:', error);
